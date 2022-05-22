@@ -9,6 +9,7 @@
     <!-- flexbox properties -->
     <style>
       .container {
+        height: 40vh;
         display: flex;
         /* display: inline-flex === in this case the container itself is not a block element, but an inline one */
 
@@ -28,6 +29,13 @@
         justify-content: space-between; /* |o...o...o...o...o|*/
         justify-content: space-around; /*   |.0..0..0..0..0.| */
         justify-content: space-evenly; /*  |..o..o..o..o..o..|*/
+
+        /* align-items ---- vertical alignment */
+        align-items: stretch; /* stretched to max*/
+        align-items: flex-start; /*at the start*/
+        align-items: flex-end; /* at the end*/
+        align-items: center; /* center it*/
+        align-items: baseline; /* aligns based on the baseline..we use it with different element sizes */
       }
     </style>
   </head>
@@ -40,11 +48,11 @@
       <div class="box box-3">3</div>
       <div class="box box-4">4</div>
       <div class="box box-5">5</div>
+      <!-- <div class="box generic">G</div>
       <div class="box generic">G</div>
       <div class="box generic">G</div>
       <div class="box generic">G</div>
-      <div class="box generic">G</div>
-      <div class="box generic">G</div>
+      <div class="box generic">G</div> -->
     </div>
   </body>
 </html>
