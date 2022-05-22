@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css flexbox tutorial</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- flexbox properties -->
+    <style>
+      .container {
+        display: flex;
+        /* display: inline-flex === in this case the container itself is not a block element, but an inline one */
+
+        flex-direction: row; /*default */
+        /* flex-direction: row-reverse; */
+        /* flex-direction: column; */
+        /* flex-direction: column-reverse; */
+
+        flex-wrap: nowrap; /*default...i need to scroll if the screen is not long enough*/
+        /* flex-wrap: wrap; not enough space then it starts a new line */
+        /* flex-wrap: wrap-reverse; not enough space starts a new line, last item will be in the first line */
+
+        /* justify-content----horizontal alignment */
+        justify-content: flex-start; /*|ooooo............|*/
+        justify-content: flex-end; /*|............ooooo|*/
+        justify-content: center; /*|......ooooo......|*/
+        justify-content: space-between; /* |o...o...o...o...o|*/
+        justify-content: space-around; /*   |.0..0..0..0..0.| */
+        justify-content: space-evenly; /*  |..o..o..o..o..o..|*/
+      }
+    </style>
+  </head>
+  <body>
+    <!-- parent = flex-container -->
+    <div class="container">
+      <!-- children  = flex-items -->
+      <div class="box box-1">1</div>
+      <div class="box box-2">2</div>
+      <div class="box box-3">3</div>
+      <div class="box box-4">4</div>
+      <div class="box box-5">5</div>
+      <div class="box generic">G</div>
+      <div class="box generic">G</div>
+      <div class="box generic">G</div>
+      <div class="box generic">G</div>
+      <div class="box generic">G</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <!--single page link-->
+
+    <a href="#kep">somewhere on the page</a>
+    <p id="home">same page link</p>
+    <br />
+    <!--external link -- to new page_blank-->
+    <a href="https://www.google.com" target="_blank">navigate link</a>
+    <br />
+    <!--internal link-->
+    <a href="about.html">about page</a>
+
+    <p>kutyafule</p>
+    <!--empty link-->
+    <br /><a href="#">empty link</a>
+    <!--sup and sub elements-->
+    <h1>The <sup>sup</sup> sup and <sub>sub</sub> elements</h1>
+    <!--strong and em-->
+    <p>
+      Lorem <strong>ipsum dolor</strong> , sit amet
+      <em>consectetur</em> adipisicing elit. Nisi, dolore!
+    </p>
+    <!--special characters-->
+    <h1>copyright &copy; &reg;</h1>
+
+    <!--list element-->
+    <!--ul list-->
+    <ul>
+      <li>Peter</li>
+      <li>John</li>
+      <li>Beth</li>
+    </ul>
+    <!--ol list-->
+    <ol>
+      <li>Peter</li>
+      <li>John</li>
+      <li>Beth</li>
+    </ol>
+    <!--table tr td th(table heading)-->
+    <table>
+      <tr>
+        <th>number</th>
+        <th>name</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>john</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>peter</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>beth</td>
+      </tr>
+    </table>
+    <!--form 
+        action to specify where it suppose to be send
+    method is the how it suppose to be sent-->
+    <form action="" method="">
+      <!--text input-->
+      <label for="firstName">First Name</label>
+      <input type="text" name="firstName" id="firstName" /><br />
+      <!--password input-->
+      <input
+        type="password"
+        name="password"
+        placeholder="please type your password"
+      />
+      <br />
+      <!--email input-->
+      <input type="email" name="email" value="email@email" />
+      <!--text area-->
+      <p>description</p>
+      <textarea name="" id="" cols="30" rows="10"></textarea><br />
+      <!--radio button-->
+      <p>please select your favorite coding language?</p>
+      <br />
+      <input type="radio" name="coding" id="" value="javascript" />Javascript
+      <input type="radio" name="coding" id="" value="java" />Java
+      <input type="radio" name="coding" id="" value="python" />Python
+      <br />
+      <!--checkboxes-->
+      <p>please select your favorite coding language?</p>
+      <br />
+      <input type="checkbox" name="prog" value="javascript" id="" />Javascript
+      <input type="checkbox" name="prog" value="java" id="" />Java
+      <input type="checkbox" name="prog" value="python" id="" />Python
+      <br />
+      <!--select input-->
+      <p>please select your favorite coding language?</p>
+      <select name="languages" id="">
+        <option value="javascript">javascript</option>
+        <option value="javas">java</option>
+        <option value="python">python</option>
+      </select>
+
+      <!--submit input-->
+      <!--<input type="submit" value="submit here" />-->
+      <button type="submit">submit here</button>
+    </form>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <h3 id="kep">kep</h3>
+    <br />
+    <a href="#home">link to top</a>
+    <br />
+    <!--image as link-->
+    <a href="http://www.udemy.com">
+      <img src="./pic.jpeg" width="200" alt="kep"
+    /></a>
+    <!--officially the ./ and the  / at the end is suggested because of React language-->
+  </body>
+</html>

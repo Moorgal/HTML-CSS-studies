@@ -1,0 +1,166 @@
+/* transform:translate(),scale(),rotate(),skew() */
+/* translate: move object on dimension x or y */
+div {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+.one {
+  background: red;
+  transform: translateX(
+    50%
+  ); /*moves to the right with 75px(because of div), if -30px then to the left*/
+}
+
+/* scale:  increase the size of the object  */
+
+.one {
+  transform: scaleX(2); /* x direction gets 2x bigger*/
+  transform: scaleY(2);
+  transform: scale(2, 3); /* x y */
+  transform: scale(2); /* both x and y */
+}
+
+/* rotate() - - rotate the element */
+.one {
+  transform: rotate(10deg); /* spin to the right 10 degree */
+  transform: rotate(-10deg); /* spin to he left 10 degree */
+
+  transform: rotateX(10deg); /*rotate on the X axis (in 3d) */
+  transform: rotateY();
+  transform: rotateZ();
+}
+
+/* skew  - - we can combine and skew the element in both directions */
+
+.one {
+  transform: skewX(40eg); /*along the x */
+  transform: skewY();
+  transform: skew(40deg, 30deg);
+}
+
+/* TRANSITION - - -  change over time */
+/* transition-property: */
+/* transition-duration: */
+/* transition-delay: */
+div:hover {
+  background: green;
+}
+.one:hover {
+  border-radius: 50%;
+}
+.one {
+  background: coral;
+  transition-property: background, border-radius;
+  transition-duration: 1s, 2s;
+  transition-delay: 2s;
+}
+/* shorthand: */
+.one {
+  transition: background 2s 1s, border-radius 3s 2s; /*duration, delay */
+  /*or */
+  transition: all 2s 1s;
+}
+/* Transition-timing-function */
+
+/* how the transition takes place
+transition: all 3s here 5s;
+default is ease
+ease = slow start, fast, slow end
+linear = same speed start to end
+ease-in = slow start
+ease-out = slow end
+ease-in-out = slow start, fast, slow end */
+
+div {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  color: white;
+  margin: 5px;
+  transition: all 2s /*linear*/;
+}
+div:hover {
+  transform: translateX(100px);
+}
+.ease {
+  transition-timing-function: linear;
+}
+
+/* ANIMATION */
+/* animation 0 1% 2% .... 100% */
+/* multiple states */
+
+div {
+  width: 200px;
+  height: 100px;
+  color: white;
+  margin: 10px;
+}
+.transition {
+  background: red;
+  transition: all 2s linear;
+}
+.transition:hover {
+  background: yellow;
+  transform: translateX(100px);
+}
+
+.animation {
+  background: blue;
+  /* animation-name: move;
+  animation-duration: 10s;
+  animation-iteration-count: 3; */
+  animation: move 10s 3; /*instead of 3 it could be infinite*/
+}
+@keyframes move {
+  0% {
+    transform: translateX(20px);
+  }
+  50% {
+    transform: translateX(100px);
+    background-color: red;
+  }
+  75% {
+    transform: translateX(200px);
+    background-color: yellow;
+  }
+  100% {
+    transform: translateX(20px);
+    background: green;
+  }
+}
+
+/* animation-fill-mode : what will happen with the element after the animation is done. Are we going back to the original position or something else */
+div {
+  width: 200px;
+  height: 100px;
+  color: white;
+  margin: 10px;
+  opacity: 0;
+}
+.animation {
+  background: blue;
+  animation: move 5s 2;
+  animation-fill-mode: forwards; /*it stays on the 100% state*/ /*backwards: go back to the original state */
+}
+@keyframes move {
+  0% {
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateX(200px);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateX(-100px);
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+}

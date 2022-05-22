@@ -1,0 +1,83 @@
+/* 
+CSS VARIABLES AKA CUSTOM PROPERTIES
+allow to store value in one place and re-use it later
+--varName:value
+property:var(--varName);
+scope
+:root{} === global
+element === :local 
+any property 
+*/
+
+:root {
+  --primaryColor: #f15025;
+  --cl-secondary: green;
+  --mainTransition: all 1s linear;
+  --mainSpacing: 5px;
+}
+
+h1 {
+  color: var(--primaryColor);
+}
+h2 {
+  color: var(--cl-secondary);
+  transition: var(--mainTransition);
+}
+p {
+  letter-spacing: var(--mainSpacing);
+  transition: var(--mainTransition);
+}
+h3:hover {
+  color: var(--cl-secondary);
+}
+
+/* local variable */
+div {
+  --primaryRed: red; /*it wont work in h3 for example */
+}
+.main-text {
+  color: var(--primaryRed);
+}
+
+/* 
+text-shadow
+bod-shadow
+
+in google i can find generator for both of them
+ */
+
+h1 {
+  text-shadow: 2px 2px 5px red; /*x axis, y axis, blur, color*/
+}
+.box {
+  width: 50px;
+  height: 50px;
+  background: blue;
+  margin: 20px;
+  box-shadow: 5px 5px 5px green;
+  transition: all 2s ease-in-out;
+}
+box:hover {
+  background: red;
+}
+
+/* object-fit: cover, contain, fill, none, scale-down */
+/* allows to resize images and video elements to fit their containers.  Similar as we did with background images*/
+
+img {
+  width: 100%;
+  display: block;
+  height: 300px;
+  object-fit: cover;
+} /*cover: covers the area without distortion. The best for most cases*/
+
+.one {
+  float: left;
+  width: 45%;
+  margin-right: 5%;
+}
+.two {
+  float: left;
+  width: 45%;
+  margin-right: 5%;
+}

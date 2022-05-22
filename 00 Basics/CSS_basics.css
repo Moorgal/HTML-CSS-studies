@@ -1,0 +1,124 @@
+/* --------------- */
+/* selectors */
+/* ---------------- */
+
+/* all the h1 */
+h1 {
+  color: blue;
+}
+
+/* all the h1,h2 and p */
+h1,
+h2,
+p {
+  color: blue;
+}
+
+/* ID selector (<h1 id="title"> headline </h1>)   */
+#title {
+  color: blue;
+}
+
+/* class selector  (<h3 class="blue"> I am blue</h3> ) */
+.blue {
+  color: blue;
+}
+/* DIV AND SPAN -  used for grouping */
+/* DIV - used to group multiple elements */
+/* SPAN - used to group inline content */
+
+/* all h1 in the div */
+div h1 {
+  color: blue;
+}
+
+/* all h1 in the div but only direct child */
+div > h1 {
+  color: blue;
+}
+
+/* ::first line ::first letter */
+
+p::first-line {
+  font-weight: bold;
+}
+p::first-letter {
+  font-size: 150%;
+}
+
+/* 
+:link - - unvisited links with href 
+:visited - - visited links
+:hover - - style element when a mouse hovers over on an element
+:active - - as the user click's
+a - - all links 
+*/
+
+a {
+  display: block;
+  background-color: red;
+  margin: 10px;
+}
+
+a:link {
+  color: white;
+}
+
+div:hover {
+  color: blue;
+}
+
+/* 
+:root - - root element of the document, higher specificity
+we use it html element
+we use it for general styles
+or in most cases css variables 
+*/
+
+/* :is() selector */
+
+/* the :is() CSS pseudo-class function takes a selector list as its argument,
+and selects any element that can be selected by one of the selectors in that list.blue
+
+allows us to write less code 
+
+example:
+nav h2:hover, header h2:hover, section h2:hover {
+  color:red;
+}
+
+with less code:*/
+:is(nav, header, section) h2:hover {
+  color: red;
+}
+
+/* :not() */
+/* opposite of :is() selector */
+
+.special :not(h1) {
+  color: red;
+}
+
+/* HSL COLOR option
+HSL stands for hue, saturation and lightness.
+google: hsl color wheel
+
+HSL color values are specified with: 
+hsl(hue, saturation, lightness)
+
+Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, 240 is blue.
+
+Saturation is a percentage value, 0% means a shade of gray and 100% is the full color. 
+
+Lightness is also a percentage, 0% is black , 100% is white */
+
+.box-1 {
+  background-color: hsl(120, 100%, 50%);
+}
+.box-2 {
+  background-color: hsl(120, 50%, 50%);
+}
+.box-3 {
+  background-color: hsl(120, 100%, 0%);
+  color: hsl(120, 100%, 100%);
+}
