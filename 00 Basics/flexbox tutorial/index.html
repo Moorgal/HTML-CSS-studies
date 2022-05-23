@@ -8,34 +8,119 @@
     <link rel="stylesheet" href="style.css" />
     <!-- flexbox properties -->
     <style>
-      .container {
-        height: 40vh;
+                  .container {
+                    height: 50vh;
+                    display: flex;
+                    /* ---===manipulate parent element===--- */
+                    /* display: inline-flex === in this case the container itself is not a block element, but an inline one */
+
+                    flex-direction: row; /*default */
+                    /* flex-direction: row-reverse; */
+                    /* flex-direction: column; */
+                    /* flex-direction: column-reverse; */
+
+                    flex-wrap: nowrap; /*default...i need to scroll if the screen is not long enough*/
+                    /* flex-wrap: wrap; not enough space then it starts a new line */
+                    /* flex-wrap: wrap-reverse; not enough space starts a new line, last item will be in the first line */
+
+                    /* justify-content----horizontal alignment */
+                    justify-content: flex-start; /*|ooooo............|*/
+                    justify-content: flex-end; /*|............ooooo|*/
+                    justify-content: center; /*|......ooooo......|*/
+                    justify-content: space-between; /* |o...o...o...o...o|*/
+                    justify-content: space-around; /*   |.0..0..0..0..0.| */
+                    justify-content: space-evenly; /*  |..o..o..o..o..o..|*/
+
+                    /* align-items ---- vertical alignment */
+                    align-items: stretch; /* stretched to max*/
+                    align-items: flex-start; /*at the start*/
+                    align-items: flex-end; /* at the end*/
+                    align-items: center; /* center it*/
+                    align-items: baseline; /* aligns based on the baseline..we use it with different element sizes */
+
+                  /* align-content  */
+                  align-content: stretch;
+                  align-content: flex-start;
+                  align-content: flex-end;
+                  align-content: space-around;
+                  align-content: space-between;
+                  align-content: center;
+                  }
+                  .container-1{
+                    height: 800px;
+                    border: 5px solid blue;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center ;
+                    justify-content: center;
+
+                  }
+
+                  /* --===manipulate children element==--- */
+            /* order = all children have order=0 by default. You can move elements
+            order by setting up higher or lower then 0 without touching HTML */
+                  .box-1{
+                    order: 1;
+                  }
+                  .box-5{
+                    order: -1;
+                  }
+
+                 /* align self - align separate elements in the line */
+                 /* situation below everyting will be in center except the box5 */
+      .container{
         display: flex;
-        /* display: inline-flex === in this case the container itself is not a block element, but an inline one */
+        height: 300px;
+        align-items: center;
 
-        flex-direction: row; /*default */
-        /* flex-direction: row-reverse; */
-        /* flex-direction: column; */
-        /* flex-direction: column-reverse; */
+      }
+      .box-5{
+        align-self: flex-end;
+      }
 
-        flex-wrap: nowrap; /*default...i need to scroll if the screen is not long enough*/
-        /* flex-wrap: wrap; not enough space then it starts a new line */
-        /* flex-wrap: wrap-reverse; not enough space starts a new line, last item will be in the first line */
 
-        /* justify-content----horizontal alignment */
-        justify-content: flex-start; /*|ooooo............|*/
-        justify-content: flex-end; /*|............ooooo|*/
-        justify-content: center; /*|......ooooo......|*/
-        justify-content: space-between; /* |o...o...o...o...o|*/
-        justify-content: space-around; /*   |.0..0..0..0..0.| */
-        justify-content: space-evenly; /*  |..o..o..o..o..o..|*/
+      /* flex grow
+      all children has by default flex-grow:0 */
+      /* situation below. box3 and box5 will fill up the remaining free space in the parent container */
+      /* if box3=2 and box5=1, still fill up the rest of the free space, but box3 has bigger proportion */
+      .container{
+        display: flex;
+      }
+      .box-5{
+        flex-grow: 1;
+      }
+      .box-3{
+        flex-grow: 1;
+      }
 
-        /* align-items ---- vertical alignment */
-        align-items: stretch; /* stretched to max*/
-        align-items: flex-start; /*at the start*/
-        align-items: flex-end; /* at the end*/
-        align-items: center; /* center it*/
-        align-items: baseline; /* aligns based on the baseline..we use it with different element sizes */
+      /* flex shrink
+      all children has flex-shrink in default 1 */
+      /* as my screen size gets smaller and parent container gets smaller we can setup the level of shrink
+      the same way as flex-grow works */
+      .container{
+        display: flex;
+      }
+      .box-3{
+        flex-shrink: 1;
+      }
+      .box-5{
+        flex-shrink: 1;
+      }
+
+      /* flex basis */
+      /* does not matter what box1 wont be smaller then 150px */
+      .container{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box-1{
+        flex-basis: 150px;
+      }
+      /* flex shortcut */
+      /* flex grow, flex shring, flex basis */
+      .box-1{
+
+        flex:1 0 200px;
       }
     </style>
   </head>
@@ -54,6 +139,12 @@
       <div class="box generic">G</div>
       <div class="box generic">G</div> -->
     </div>
-    <a href="/13 HeroProject/banner.html">banner html</a>
+    <div class="container-1">
+      <div class="box box-1">1</div>
+      <div class="box box-2">2</div>
+      <div class="box box-3">3</div>
+      <div class="box box-4">4</div>
+      <div class="box box-5">5</div>
+    </div>
   </body>
 </html>
