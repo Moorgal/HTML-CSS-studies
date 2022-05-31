@@ -224,6 +224,58 @@ Navbar
   background-color: var(--clr-primary-8);
   padding-left: 2.25rem;
 }
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: 280px;
+}
+@media screen and (min-width: 992px) {
+  /* hide toggle button */
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+  .nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+  }
+  .nav-header {
+    padding: 0 0;
+  }
+  .nav-link {
+    padding: 0 0;
+    margin-right: 0.7rem;
+  }
+  .nav-link:hover {
+    padding: 0;
+    color: var(--clr-primary-5);
+    background: transparent;
+  }
+  .nav-icons {
+    display: flex;
+  }
+  .nav-icon {
+    margin-right: 0.7rem;
+    color: var(--clr-primary-5);
+    font-size: 1.2rem;
+    transition: var(--transition);
+  }
+  .nav-icon:hover {
+    color: var(--clr-primary-8);
+  }
+}
 /*
 =============== 
 Hero
@@ -397,6 +449,7 @@ Featured Tours
 }
 .tour-img {
   height: 15rem;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .tour-date {
@@ -546,6 +599,7 @@ Gallery
 }
 .gallery-img {
   height: 17rem;
+  -o-object-fit: cover;
   object-fit: cover;
   transform: var(--transition);
 }
