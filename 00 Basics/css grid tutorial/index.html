@@ -5,12 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* units we can use (rows as well): px rem em % auto fr */
+      .container {
+        margin: 7rem;
+        min-height: 100vh;
+        display: grid;
+        /* setting up first column for 200px then second column for 300px */
+        /* grid-template-columns: 200px 7rem auto;
+        grid-template-rows: 300px auto 20rem; */
+
+        /* fr - fraction - fraction of available space  */
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 1fr 1fr 1fr;
+        /* row-gap: 50px;
+        column-gap: 20px; */
+        gap: 50px 20px;
+      }
+    </style>
     <title>Grid tutorial</title>
   </head>
   <body>
     <div class="container">
-      <div class="cell">cell 1</div>
-      <div class="cell">cell 2</div>
+      <div class="cell cell-1">cell 1</div>
+      <div class="cell cell-2">cell 2</div>
+      <div class="cell cell-3">cell 3</div>
+      <div class="cell cell-4">cell 4</div>
+      <div class="cell cell-5">cell 5</div>
+      <div class="cell">cell 6</div>
+      <div class="cell">cell 7</div>
     </div>
   </body>
 </html>
