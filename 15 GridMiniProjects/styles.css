@@ -12,8 +12,11 @@
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.2rem;
 }
-
-/* global styles */
+/*
+===================================================================================================
+ global styles
+ ==================================================================================================
+*/
 * {
   margin: 0;
   padding: 0;
@@ -51,8 +54,11 @@ p {
   font-size: 0.7rem;
   line-height: 2;
 }
-
-/* button */
+/*
+===================================================================================================
+ button
+ ==================================================================================================
+*/
 .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -70,9 +76,11 @@ p {
   background: var(--primaryColor);
   color: var(--mainWhite);
 }
-
-/* main navbar */
-
+/*
+===================================================================================================
+ main navbar
+ ==================================================================================================
+*/
 .main-navbar {
   background-color: var(--darkGrey);
   padding: 0 2rem;
@@ -107,9 +115,11 @@ p {
     text-align: center;
   }
 }
-
-/* hero */
-
+/*
+===================================================================================================
+ hero
+ ==================================================================================================
+*/
 .hero-header {
   min-height: 100vh;
   background: var(--primaryColor);
@@ -117,10 +127,6 @@ p {
   display: grid;
   justify-content: center;
   align-items: center;
-}
-.hero-banner {
-  /* background: blue; */
-  /* text-align: center; */
 }
 .hero-banner p {
   width: 80%;
@@ -137,4 +143,252 @@ p {
     background: linear-gradient(rgba(241, 80, 37, 0.75), rgba(0, 0, 0, 0.75)),
       url(./images/image-2.jpeg) center/cover fixed no-repeat;
   }
-} ;
+}
+/*
+===================================================================================================
+ cards
+ ==================================================================================================
+*/
+.title {
+  text-align: center;
+}
+.cards {
+  padding: 4rem 0;
+}
+.cards-center {
+  width: 80vw;
+  max-width: 1170px;
+  margin: 2rem auto;
+}
+.card {
+  border: 1px solid var(--darkGrey);
+  margin-bottom: 3rem;
+}
+.card-info {
+  padding: 1rem;
+}
+.card-footer {
+  background: var(--darkGrey);
+  padding: 0.5rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+.card-footer span {
+  color: var(--primaryColor);
+}
+/* @media screen and (min-width: 768px) {
+  .cards-center {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .cards-center {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+} */
+
+/* 1170px (thats the max width set) - 64px (2x 2rem(the gap we set) =2x32px=64px) = 1106
+1106 / 3 (amount of columns) = 368.66667 (that is the size of one card with 3 column layout*/
+
+/* (1170-64)/3=368px */
+.cards-center {
+  display: grid;
+  column-gap: 2rem;
+  /* grid-template-columns: repeat(auto-fill, minmax(368px, 1fr)); */
+  /* grid-template-columns: repeat(auto-fit, minmax(368px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(268.5px, 1fr));
+}
+/* i set this because one of the lorum is longer then the rest: */
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+/*
+===================================================================================================
+ tiles 
+ ==================================================================================================
+*/
+
+.tiles {
+  padding: 4rem 0;
+}
+.tiles-center {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 2rem auto;
+  display: grid;
+  row-gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .tiles-center {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .tiles-center {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .tiles-center {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 200px);
+    grid-template-areas:
+      "a a a b"
+      "a a a c"
+      "d d d d"
+      "e f f f"
+      "e g h i";
+  }
+  .tiles img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .tile-1 {
+    grid-area: a;
+  }
+  .tile-2 {
+    grid-area: b;
+  }
+  .tile-3 {
+    grid-area: c;
+  }
+  .tile-4 {
+    grid-area: d;
+  }
+  .tile-5 {
+    grid-area: e;
+  }
+  .tile-6 {
+    grid-area: f;
+  }
+  .tile-7 {
+    grid-area: g;
+  }
+  .tile-8 {
+    grid-area: h;
+  }
+  .tile-9 {
+    grid-area: i;
+  }
+}
+
+/*
+===================================================================================================
+ layout 
+ ==================================================================================================
+*/
+
+.header {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.navbar {
+  background: var(--darkGrey);
+}
+.navbar li {
+  list-style-type: none;
+}
+.navbar a {
+  padding: 1rem;
+  display: inline-block;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1.2rem;
+  color: var(--mainBlack);
+  transition: var(--mainTransition);
+  -webkit-transition: var(--mainTransition);
+  -moz-transition: var(--mainTransition);
+  -ms-transition: var(--mainTransition);
+  -o-transition: var(--mainTransition);
+}
+.navbar a:hover {
+  color: var(--mainWhite);
+}
+.content {
+  padding: 2rem;
+}
+.content p {
+  font-size: 1rem;
+}
+.sidebar {
+  background-color: var(--primaryColor);
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  color: var(--mainWhite);
+  font-size: 1.2rem;
+}
+.footer {
+  background: var(--mainBlack);
+  color: var(--mainWhite);
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.5rem;
+}
+.footer p {
+  font-size: 1.2rem;
+}
+
+.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+}
+@media screen and (min-width: 768px) {
+  .navbar ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main {
+    grid-template-columns: [start]200px [col-1-end] 1fr [col-2-end] 50px [end];
+    grid-template-rows: [start] auto [row-1-end] 1fr [row-2-end] auto [end];
+  }
+  .header {
+    grid-column: start/end;
+    grid-row: start/row-1-end;
+  }
+  .navbar {
+    grid-column: start/col-1-end;
+    grid-row: row-1-end/row-2-end;
+  }
+  .content {
+    grid-column: col-1-end/col-2-end;
+    grid-row: row-1-end/row-2-end;
+  }
+  .sidebar {
+    grid-column: col-2-end/end;
+    grid-row: row-1-end/row-2-end;
+  }
+  .footer {
+    grid-column: start/end;
+    grid-row: row-2-end/end;
+  }
+  .navbar ul {
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-height: 100%;
+  }
+  .sidebar {
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-height: 100%;
+    background: var(--darkGrey);
+  }
+}
